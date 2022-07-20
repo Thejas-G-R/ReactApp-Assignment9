@@ -46,7 +46,7 @@ function App(props) {
               </div>
               <button type="submit" className="btn btn-primary" onClick={(e) => { handleSubmit(e) }}>Submit</button>
               {loginErr === "invalid" ? <div className="errMessage">
-                Wrong crdentials
+                Wrong credentials
               </div> : null}
             </form>
           </div>
@@ -110,10 +110,10 @@ function App(props) {
           if (result && result.errCode === 0) {
             setIsLoggeIn(true)
             console.log("success")
+          } else {
+            setLoginErr("invalid")
           }
         }))
-    } else {
-      setLoginErr("invalid")
     }
   }
 }
